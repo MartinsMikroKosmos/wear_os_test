@@ -25,14 +25,14 @@ sealed class NavigationEvent {
     data class NavigateToDetails(val itemId: String) : NavigationEvent()
 }
 
-class MenuViewmodel : ViewModel() {
+class MenuViewModel : ViewModel() {
 
     private val _uiState = MutableStateFlow(MenuUiState())
     val uiState = _uiState.asStateFlow()
 
     // Sharedflow ist ideal für "Einmal"-Events wie Navigation
     private val _navigationEvent = MutableSharedFlow<NavigationEvent>()
-    val navigationEvents = _navigationEvent.asSharedFlow()
+    val navigationEvent = _navigationEvent.asSharedFlow()
 
     init {
         // Daten laden TODO(noch Hardcoded)

@@ -24,32 +24,19 @@ import androidx.wear.compose.material.MaterialTheme
 import androidx.wear.compose.material.Scaffold
 import androidx.wear.compose.material.Text
 import androidx.wear.compose.material.TimeText
-import kotlinx.coroutines.flow.SharedFlow
-import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 @Composable
 fun MenuScreen(
     // ViewModel wird per Hilt/Koin oder viewModel() bereitgestellt
-    viewmodel: MenuViewmodel = androidx.lifecycle.viewmodel.compose.viewModel(),
+    viewmodel: MenuViewModel = androidx.lifecycle.viewmodel.compose.viewModel(),
 
-    // Navigations-Events werden von der Ui *empfangen*
-    navigationEvents: SharedFlow<NavigationEvent>,
-
-    // Navigations-Aktionen werden *ausgelöst*
-    onNavigate: (NavigationEvent) -> Unit,
 
     modifier: Modifier = Modifier) {
 
     // Zustand vom ViewModel beobachten
     val uiState by viewmodel.uiState.collectAsStateWithLifecycle()
 
-    // Navigation-Events aus dem ViewModel
-    LaunchedEffect(Unit) {
-        navigationEvents.collectLatest { event ->
-            onNavigate(event)
-        }
-    }
 
     Scaffold(
         timeText = { TimeText() },
