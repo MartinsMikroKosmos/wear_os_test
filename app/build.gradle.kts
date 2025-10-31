@@ -59,4 +59,7 @@ dependencies {
     debugImplementation(libs.ui.test.manifest)
 
     implementation(libs.wear.compose.navigation)
+
+    implementation(libs.lifecycle.viewmodel.compose)
+    implementation(libs.lifecycle.runtime.compose)
 }

@@ -10,6 +10,7 @@ activityCompose = "1.8.0"
 coreSplashscreen = "1.0.1"
 material = "1.13.0"
 wearComposeNaviagtion = "1.5.4"
+lifecycle = "2.9.4"
 
 [libraries]
 play-services-wearable = { group = "com.google.android.gms", name = "play-services-wearable", version.ref = "playServicesWearable" }
@@ -27,6 +28,8 @@ activity-compose = { group = "androidx.activity", name = "activity-compose", ver
 core-splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "coreSplashscreen" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 wear-compose-navigation = { module = "androidx.wear.compose:compose-navigation", version.ref = "wearComposeNaviagtion"}
+lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycle" }
+lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
