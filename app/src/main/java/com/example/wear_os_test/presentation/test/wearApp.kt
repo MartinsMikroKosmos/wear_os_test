@@ -1,4 +1,4 @@
-package com.example.wear_os_test.presentation
+package com.example.wear_os_test.presentation.test
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
